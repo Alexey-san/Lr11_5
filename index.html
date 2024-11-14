@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратній порядок чисел</title>
+    <script>
+        // Функція для виведення чисел в оберненому порядку
+        function reverseNumbers() {
+            // Отримуємо введену послідовність чисел
+            const input = document.getElementById("numbers").value;
+            
+            // Перетворюємо введену строку в масив чисел
+            const numbersArray = input.split(',').map(Number);
+            
+            // Перевірка, чи є вхідні дані валідними числами
+            if (numbersArray.some(isNaN)) {
+                alert("Будь ласка, введіть коректну послідовність чисел, розділених комами.");
+                return;
+            }
+
+            // Оборотний порядок масиву
+            const reversedArray = numbersArray.reverse();
+            
+            // Виведення результату
+            document.getElementById("result").innerText = "Числа в оберненому порядку: " + reversedArray.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h1>Виведення чисел в оберненому порядку</h1>
+    <label for="numbers">Введіть послідовність чисел (через кому): </label>
+    <input type="text" id="numbers" placeholder="1, 2, 3, 4"><br><br>
+    
+    <button onclick="reverseNumbers()">Показати обернений порядок</button>sssss
+
+    <p id="result"></p>
+</body>
+</html>
